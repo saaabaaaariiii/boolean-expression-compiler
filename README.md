@@ -1,10 +1,10 @@
 # Boolean Expression Compiler
 
-## Overview
+## 1. Overview
 
-The Boolean Expression Compiler is a mini compiler front-end developed using C, Flex, and Bison. It recognizes Boolean expressions, constructs an Abstract Syntax Tree (AST), and evaluates the expression to produce a Boolean result.
+The Boolean Expression Compiler is a mini compiler project developed using C, Flex, and Bison. It accepts Boolean expressions, performs lexical and syntax analysis, constructs an Abstract Syntax Tree (AST), and evaluates the expression to produce a Boolean result.
 
-## Features
+## 2. Features
 
 - Lexical analysis using Flex
 - Syntax analysis using Bison
@@ -12,55 +12,70 @@ The Boolean Expression Compiler is a mini compiler front-end developed using C, 
 - Relational operators: `>`, `<`, `>=`, `<=`, `==`, `!=`
 - Logical operators: `&&`, `||`, `!`
 - Parentheses for grouping expressions
-- Abstract Syntax Tree (AST) generation and display
+- Abstract Syntax Tree (AST) construction and display
 - Boolean expression evaluation
-- Rejection of invalid expressions
+- Detection of invalid syntax
 
-## Requirements
+## 3. Technologies and Requirements
 
+- C programming language
 - GCC compiler
 - Flex
 - Bison
 - Linux or Ubuntu/WSL terminal
+- GNU Make
 
-## Project Files
+## 4. Project Structure
 
-- `lexer.l` — lexical analyzer rules
-- `parser.y` — grammar, parser rules, AST construction, and evaluation
-- `lex.yy.c` — generated lexer source
-- `parser.tab.c` — generated parser source
-- `parser.tab.h` — generated parser header
-- `boolean_compiler` — compiled executable
+| File | Purpose |
+|---|---|
+| `lexer.l` | Defines lexical analysis rules |
+| `parser.y` | Defines grammar rules and syntax analysis |
+| `ast.h` | Declares the AST node structure and AST functions |
+| `ast.c` | Creates and prints the Abstract Syntax Tree |
+| `semantic.h` | Declares the expression evaluation function |
+| `semantic.c` | Evaluates the AST and calculates the Boolean result |
+| `main.c` | Contains the program entry point |
+| `Makefile` | Automates the build process |
+| `README.md` | Project documentation |
 
-## Build Instructions
+The files `lex.yy.c`, `parser.tab.c`, and `parser.tab.h` are generated automatically by Flex and Bison during compilation. They do not need to be edited manually.
 
-Open a terminal in the project directory and run:
+## 5. Build Instructions
+
+Install GCC, Flex, Bison, and Make if they are not already installed. From the project directory, run:
 
 ```bash
-bison -d parser.y
-flex lexer.l
-gcc lex.yy.c parser.tab.c -o boolean_compiler
+make
 ```
 
-## Run the Compiler
+To remove generated files and the executable:
+
+```bash
+make clean
+```
+
+## 6. Run the Compiler
 
 ```bash
 ./boolean_compiler
 ```
 
-Enter one Boolean expression when prompted.
+Enter a Boolean expression when prompted.
 
-## Example
+## 7. Example
 
-Input:
+**Input:**
 
 ```text
 5 > 3 && 8 < 10
 ```
 
-Expected result:
+**Expected output:**
 
 ```text
+Enter a Boolean expression:
+
 Valid Boolean expression!
 Abstract Syntax Tree:
 &&
@@ -74,30 +89,39 @@ Abstract Syntax Tree:
 Result: TRUE
 ```
 
-## Invalid Expression Example
+## 8. Invalid Expression Example
 
-Input:
+**Input:**
 
 ```text
 5 > && 3
 ```
 
-Expected message:
+The compiler reports:
 
 ```text
 Invalid Boolean expression!
 ```
 
-## Grammar and Precedence
+## 9. Grammar and Operator Precedence
 
-The grammar is implemented in `parser.y`. The transformed grammar separates expressions into precedence levels so that logical AND has higher precedence than logical OR. Logical NOT is handled recursively at the unary level.
+The grammar is defined in `parser.y`. It separates expressions into different levels to establish operator precedence:
 
-## Limitations
+1. Parenthesized expressions, constants, and comparisons
+2. Logical NOT (`!`)
+3. Logical AND (`&&`)
+4. Logical OR (`||`)
 
-- Numeric comparisons use integer operands.
+Logical AND has higher precedence than logical OR. Parentheses can be used to group expressions and control evaluation order.
+
+## 10. Limitations
+
+- Relational comparisons accept integer operands.
 - Arithmetic expressions such as `5 + 3 > 7` are not supported.
+- Variables and variable assignments are not supported.
 - The compiler processes one expression per execution.
+- Semantic evaluation is implemented through AST evaluation; a separate comprehensive type-checking system is not included.
 
-## Conclusion
+## 11. Conclusion
 
-This project demonstrates the basic stages of a compiler front-end: lexical analysis, syntax analysis, AST construction, and semantic evaluation of Boolean expressions.
+This project demonstrates key compiler front-end concepts: lexical analysis, syntax analysis, grammar-based parsing, AST construction, and semantic evaluation of Boolean expressions.
