@@ -125,7 +125,8 @@ Logical AND has higher precedence than logical OR. Parentheses can be used to gr
 ## 11. Individual Contributions
 
 Team Members & Individual Contributions
-Sabari A S (Team Lead)
+
+Sabari A S 
 
 Role: Implemented lexical analysis rules in lexer.l.
 
