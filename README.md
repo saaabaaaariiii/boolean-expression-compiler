@@ -122,6 +122,16 @@ Logical AND has higher precedence than logical OR. Parentheses can be used to gr
 - The compiler processes one expression per execution.
 - Semantic evaluation is implemented through AST evaluation; a separate comprehensive type-checking system is not included.
 
-## 11. Conclusion
+## 11. Individual Contributions
+
+Team Member	Core Module                        Technical Role                        	Report & Presentation Role
+Sabari A S                           	lexer.l (Lexical Analysis Rules)	            Project Report Co-author
+Sera Liz David                        	main.c (Program Entry Point & Flow)            	Project Report Co-author
+Niya Tom	                         ast.c, ast.h (AST Construction & Display)	        Project Report Co-author
+S Devadathan	                     Makefile, README.md (Build Automation)	            Project Presentation Co-author
+Rohith Samuel	                  semantic.c, semantic.h (AST Evaluation & Logic)	    Project Presentation Co-author
+Parvathy Prakash	                   parser.y (CFG Grammar & Syntax Analysis)         Project Presentation Co-author
+
+## 12. Conclusion
 
 This project demonstrates key compiler front-end concepts: lexical analysis, syntax analysis, grammar-based parsing, AST construction, and semantic evaluation of Boolean expressions.
