@@ -124,13 +124,42 @@ Logical AND has higher precedence than logical OR. Parentheses can be used to gr
 
 ## 11. Individual Contributions
 
-Team Member	Core Module                        Technical Role                        	Report & Presentation Role
-Sabari A S                           	lexer.l (Lexical Analysis Rules)	            Project Report Co-author
-Sera Liz David                        	main.c (Program Entry Point & Flow)            	Project Report Co-author
-Niya Tom	                         ast.c, ast.h (AST Construction & Display)	        Project Report Co-author
-S Devadathan	                     Makefile, README.md (Build Automation)	            Project Presentation Co-author
-Rohith Samuel	                  semantic.c, semantic.h (AST Evaluation & Logic)	    Project Presentation Co-author
-Parvathy Prakash	                   parser.y (CFG Grammar & Syntax Analysis)         Project Presentation Co-author
+Team Members & Individual Contributions
+Sabari A S (Team Lead)
+
+Role: Implemented lexical analysis rules in lexer.l.
+
+Documentation: Co-authored the project report.
+
+Sera Liz David
+
+Role: Developed the program entry point and execution flow in main.c.
+
+Documentation: Co-authored the project report.
+
+Niya Tom
+
+Role: Designed the AST node structure and tree-display logic in ast.c and ast.h.
+
+Documentation: Co-authored the project report.
+
+S Devadathan
+
+Role: Created the Makefile build script and README.md documentation.
+
+Documentation: Co-authored the project presentation slides.
+
+Rohith Samuel
+
+Role: Implemented AST semantic evaluation and boolean calculations in semantic.c and semantic.h.
+
+Documentation: Co-authored the project presentation slides.
+
+Parvathy Prakash
+
+Role: Defined the Context-Free Grammar (CFG) rules and operator precedence in parser.y.
+
+Documentation: Co-authored the project presentation slides
 
 ## 12. Conclusion
 
